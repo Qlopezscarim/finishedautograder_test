@@ -1,0 +1,45 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (lin64) Build 5239630 Fri Nov 08 22:34:34 MST 2024
+| Date         : Tue Feb  4 17:21:12 2025
+| Host         : ece-lnx-4511c running 64-bit Red Hat Enterprise Linux Server release 7.9 (Maipo)
+| Command      : report_utilization -hierarchical -hierarchical_depth 6 -file ./report/fir_utilization_hierarchical_synth.rpt
+| Design       : bd_0_wrapper
+| Device       : xczu48dr-ffvg1517-2-e
+| Speed File   : -2
+| Design State : Synthesized
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Utilization Design Information
+
+Table of Contents
+-----------------
+1. Utilization by Hierarchy
+
+1. Utilization by Hierarchy
+---------------------------
+
++----------------------------------------------------+--------------------------------------------------------------+------------+------------+---------+------+------+--------+--------+------+------------+
+|                      Instance                      |                            Module                            | Total LUTs | Logic LUTs | LUTRAMs | SRLs |  FFs | RAMB36 | RAMB18 | URAM | DSP Blocks |
++----------------------------------------------------+--------------------------------------------------------------+------------+------------+---------+------+------+--------+--------+------+------------+
+| bd_0_wrapper                                       |                                                        (top) |        730 |        730 |       0 |    0 | 1270 |      0 |      0 |    0 |          6 |
+|   bd_0_i                                           |                                                         bd_0 |        730 |        730 |       0 |    0 | 1270 |      0 |      0 |    0 |          6 |
+|     hls_inst                                       |                                              bd_0_hls_inst_0 |        730 |        730 |       0 |    0 | 1270 |      0 |      0 |    0 |          6 |
+|       (hls_inst)                                   |                                              bd_0_hls_inst_0 |          0 |          0 |       0 |    0 |    0 |      0 |      0 |    0 |          0 |
+|       inst                                         |                                          bd_0_hls_inst_0_fir |        730 |        730 |       0 |    0 | 1270 |      0 |      0 |    0 |          6 |
+|         (inst)                                     |                                          bd_0_hls_inst_0_fir |          1 |          1 |       0 |    0 |   44 |      0 |      0 |    0 |          0 |
+|         control_s_axi_U                            |                            bd_0_hls_inst_0_fir_control_s_axi |         25 |         25 |       0 |    0 |   28 |      0 |      0 |    0 |          0 |
+|         grp_fir_Pipeline_read_a_fu_78              |                      bd_0_hls_inst_0_fir_fir_Pipeline_read_a |         21 |         21 |       0 |    0 |  331 |      0 |      0 |    0 |          0 |
+|           (grp_fir_Pipeline_read_a_fu_78)          |                      bd_0_hls_inst_0_fir_fir_Pipeline_read_a |         10 |         10 |       0 |    0 |  329 |      0 |      0 |    0 |          0 |
+|           flow_control_loop_pipe_sequential_init_U | bd_0_hls_inst_0_fir_flow_control_loop_pipe_sequential_init_3 |         11 |         11 |       0 |    0 |    2 |      0 |      0 |    0 |          0 |
+|         grp_fir_Pipeline_sample_loop_fu_94         |                 bd_0_hls_inst_0_fir_fir_Pipeline_sample_loop |        566 |        566 |       0 |    0 |  660 |      0 |      0 |    0 |          6 |
+|           (grp_fir_Pipeline_sample_loop_fu_94)     |                 bd_0_hls_inst_0_fir_fir_Pipeline_sample_loop |        274 |        274 |       0 |    0 |  658 |      0 |      0 |    0 |          0 |
+|           flow_control_loop_pipe_sequential_init_U |   bd_0_hls_inst_0_fir_flow_control_loop_pipe_sequential_init |          5 |          5 |       0 |    0 |    2 |      0 |      0 |    0 |          0 |
+|           mul_32s_32s_32_1_1_U12                   |                       bd_0_hls_inst_0_fir_mul_32s_32s_32_1_1 |        143 |        143 |       0 |    0 |    0 |      0 |      0 |    0 |          3 |
+|           mul_32s_32s_32_1_1_U13                   |                     bd_0_hls_inst_0_fir_mul_32s_32s_32_1_1_2 |        144 |        144 |       0 |    0 |    0 |      0 |      0 |    0 |          3 |
+|         regslice_both_a_U                          |                            bd_0_hls_inst_0_fir_regslice_both |         40 |         40 |       0 |    0 |   69 |      0 |      0 |    0 |          0 |
+|         regslice_both_in_r_U                       |                          bd_0_hls_inst_0_fir_regslice_both_0 |         39 |         39 |       0 |    0 |   69 |      0 |      0 |    0 |          0 |
+|         regslice_both_out_r_U                      |                          bd_0_hls_inst_0_fir_regslice_both_1 |         38 |         38 |       0 |    0 |   69 |      0 |      0 |    0 |          0 |
++----------------------------------------------------+--------------------------------------------------------------+------------+------------+---------+------+------+--------+--------+------+------------+
+
+

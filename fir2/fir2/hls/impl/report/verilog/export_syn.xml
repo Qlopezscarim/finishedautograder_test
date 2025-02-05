@@ -1,0 +1,225 @@
+<profile>
+  <RunData>
+    <RUN_TYPE>synth</RUN_TYPE>
+    <VIVADO_VERSION>v.2024.2</VIVADO_VERSION>
+    <ROOT_MODULE_CELL>bd_0_i/hls_inst</ROOT_MODULE_CELL>
+  </RunData>
+  <TimingReport>
+    <TargetClockPeriod>5.000</TargetClockPeriod>
+    <AchievedClockPeriod>3.983</AchievedClockPeriod>
+    <CLOCK_NAME>ap_clk</CLOCK_NAME>
+    <CP_FINAL>3.983</CP_FINAL>
+    <CP_ROUTE>NA</CP_ROUTE>
+    <CP_SYNTH>3.983</CP_SYNTH>
+    <CP_TARGET>5.000</CP_TARGET>
+    <SLACK_FINAL>1.017</SLACK_FINAL>
+    <SLACK_ROUTE/>
+    <SLACK_SYNTH>1.017</SLACK_SYNTH>
+    <TIMING_MET>TRUE</TIMING_MET>
+    <TNS_FINAL>0.000</TNS_FINAL>
+    <TNS_ROUTE>NA</TNS_ROUTE>
+    <TNS_SYNTH>0.000</TNS_SYNTH>
+    <WNS_FINAL>1.017</WNS_FINAL>
+    <WNS_ROUTE>NA</WNS_ROUTE>
+    <WNS_SYNTH>1.017</WNS_SYNTH>
+  </TimingReport>
+  <AreaReport>
+    <Resources>
+      <BRAM>0</BRAM>
+      <CLB>0</CLB>
+      <DSP>6</DSP>
+      <FF>1270</FF>
+      <LATCH>0</LATCH>
+      <LUT>730</LUT>
+      <SRL>0</SRL>
+      <URAM>0</URAM>
+    </Resources>
+    <AvailableResources>
+      <BRAM>2160</BRAM>
+      <CLB>0</CLB>
+      <DSP>4272</DSP>
+      <FF>850560</FF>
+      <LUT>425280</LUT>
+      <URAM>80</URAM>
+    </AvailableResources>
+  </AreaReport>
+  <RtlModules>
+    <RtlModule CELL="inst" DEPTH="0" IS_TOP="1" TYPE="function" MODULENAME="fir" DISPNAME="inst" RTLNAME="fir">
+      <SubModules count="6">control_s_axi_U grp_fir_Pipeline_read_a_fu_78 grp_fir_Pipeline_sample_loop_fu_94 regslice_both_a_U regslice_both_in_r_U regslice_both_out_r_U</SubModules>
+      <Resources DSP="6" FF="1270" LUT="730"/>
+      <LocalResources FF="44" LUT="1"/>
+    </RtlModule>
+    <RtlModule CELL="inst/control_s_axi_U" DEPTH="1" TYPE="resource" MODULENAME="control_s_axi" DISPNAME="control_s_axi_U" RTLNAME="fir_control_s_axi">
+      <Resources FF="28" LUT="25"/>
+      <BindNode BINDTYPE="adapter" BRAM="0" BUNDLEDNAME="control" DISPNAME="bind_adapter " DSP="0" ID="" IMPL="" LATENCY="" LOOP="" OPTYPE="" PRAGMA="" RTLNAME="control_s_axi_U" SOURCE="" STORAGESIZE="" STORAGESUBTYPE="s_axilite" STORAGEUSAGE="interface" URAM="0" VARIABLE=""/>
+    </RtlModule>
+    <RtlModule CELL="inst/grp_fir_Pipeline_read_a_fu_78" DEPTH="1" TYPE="function" MODULENAME="fir_Pipeline_read_a" DISPNAME="grp_fir_Pipeline_read_a_fu_78" RTLNAME="fir_fir_Pipeline_read_a">
+      <SubModules count="1">flow_control_loop_pipe_sequential_init_U</SubModules>
+      <Resources FF="331" LUT="21"/>
+      <LocalResources FF="329" LUT="10"/>
+    </RtlModule>
+    <RtlModule CELL="inst/grp_fir_Pipeline_read_a_fu_78/flow_control_loop_pipe_sequential_init_U" DEPTH="2" TYPE="rtl" MODULENAME="flow_control_loop_pipe_sequential_init" DISPNAME="flow_control_loop_pipe_sequential_init_U" RTLNAME="fir_flow_control_loop_pipe_sequential_init">
+      <Resources FF="2" LUT="11"/>
+    </RtlModule>
+    <RtlModule CELL="inst/grp_fir_Pipeline_sample_loop_fu_94" DEPTH="1" TYPE="function" MODULENAME="fir_Pipeline_sample_loop" DISPNAME="grp_fir_Pipeline_sample_loop_fu_94" RTLNAME="fir_fir_Pipeline_sample_loop">
+      <SubModules count="3">flow_control_loop_pipe_sequential_init_U mul_32s_32s_32_1_1_U12 mul_32s_32s_32_1_1_U13</SubModules>
+      <Resources DSP="6" FF="660" LUT="566"/>
+      <LocalResources FF="658" LUT="274"/>
+    </RtlModule>
+    <RtlModule CELL="inst/grp_fir_Pipeline_sample_loop_fu_94/flow_control_loop_pipe_sequential_init_U" DEPTH="2" TYPE="rtl" MODULENAME="flow_control_loop_pipe_sequential_init" DISPNAME="flow_control_loop_pipe_sequential_init_U" RTLNAME="fir_flow_control_loop_pipe_sequential_init">
+      <Resources FF="2" LUT="5"/>
+    </RtlModule>
+    <RtlModule CELL="inst/grp_fir_Pipeline_sample_loop_fu_94/mul_32s_32s_32_1_1_U12" DEPTH="2" TYPE="resource" MODULENAME="mul_32s_32s_32_1_1" DISPNAME="mul_32s_32s_32_1_1_U12" RTLNAME="fir_mul_32s_32s_32_1_1">
+      <Resources DSP="3" LUT="143"/>
+      <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="3" ID="" IMPL="auto" LATENCY="0" LOOP="sample_loop" OPTYPE="mul" PRAGMA="" RTLNAME="mul_32s_32s_32_1_1_U12" SOURCE="fir.cpp:29" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln29" VISIBLE="true"/>
+      <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="3" ID="" IMPL="auto" LATENCY="0" LOOP="sample_loop" OPTYPE="mul" PRAGMA="" RTLNAME="mul_32s_32s_32_1_1_U12" SOURCE="fir.cpp:29" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln29_2" VISIBLE="true"/>
+      <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="3" ID="" IMPL="auto" LATENCY="0" LOOP="sample_loop" OPTYPE="mul" PRAGMA="" RTLNAME="mul_32s_32s_32_1_1_U12" SOURCE="fir.cpp:29" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln29_4" VISIBLE="true"/>
+      <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="3" ID="" IMPL="auto" LATENCY="0" LOOP="sample_loop" OPTYPE="mul" PRAGMA="" RTLNAME="mul_32s_32s_32_1_1_U12" SOURCE="fir.cpp:29" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln29_6" VISIBLE="true"/>
+      <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="3" ID="" IMPL="auto" LATENCY="0" LOOP="sample_loop" OPTYPE="mul" PRAGMA="" RTLNAME="mul_32s_32s_32_1_1_U12" SOURCE="fir.cpp:29" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln29_8" VISIBLE="true"/>
+    </RtlModule>
+    <RtlModule CELL="inst/grp_fir_Pipeline_sample_loop_fu_94/mul_32s_32s_32_1_1_U13" DEPTH="2" TYPE="resource" MODULENAME="mul_32s_32s_32_1_1" DISPNAME="mul_32s_32s_32_1_1_U13" RTLNAME="fir_mul_32s_32s_32_1_1">
+      <Resources DSP="3" LUT="144"/>
+      <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="3" ID="" IMPL="auto" LATENCY="0" LOOP="sample_loop" OPTYPE="mul" PRAGMA="" RTLNAME="mul_32s_32s_32_1_1_U13" SOURCE="fir.cpp:29" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln29_1" VISIBLE="true"/>
+      <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="3" ID="" IMPL="auto" LATENCY="0" LOOP="sample_loop" OPTYPE="mul" PRAGMA="" RTLNAME="mul_32s_32s_32_1_1_U13" SOURCE="fir.cpp:29" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln29_3" VISIBLE="true"/>
+      <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="3" ID="" IMPL="auto" LATENCY="0" LOOP="sample_loop" OPTYPE="mul" PRAGMA="" RTLNAME="mul_32s_32s_32_1_1_U13" SOURCE="fir.cpp:29" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln29_5" VISIBLE="true"/>
+      <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="3" ID="" IMPL="auto" LATENCY="0" LOOP="sample_loop" OPTYPE="mul" PRAGMA="" RTLNAME="mul_32s_32s_32_1_1_U13" SOURCE="fir.cpp:29" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln29_7" VISIBLE="true"/>
+      <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="3" ID="" IMPL="auto" LATENCY="0" LOOP="sample_loop" OPTYPE="mul" PRAGMA="" RTLNAME="mul_32s_32s_32_1_1_U13" SOURCE="fir.cpp:29" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln29_9" VISIBLE="true"/>
+    </RtlModule>
+    <RtlModule CELL="inst/regslice_both_a_U" DEPTH="1" TYPE="rtl" MODULENAME="regslice_both" DISPNAME="regslice_both_a_U" RTLNAME="fir_regslice_both">
+      <Resources FF="69" LUT="40"/>
+    </RtlModule>
+    <RtlModule CELL="inst/regslice_both_in_r_U" DEPTH="1" TYPE="rtl" MODULENAME="regslice_both" DISPNAME="regslice_both_in_r_U" RTLNAME="fir_regslice_both">
+      <Resources FF="69" LUT="39"/>
+    </RtlModule>
+    <RtlModule CELL="inst/regslice_both_out_r_U" DEPTH="1" TYPE="rtl" MODULENAME="regslice_both" DISPNAME="regslice_both_out_r_U" RTLNAME="fir_regslice_both">
+      <Resources FF="69" LUT="38"/>
+    </RtlModule>
+  </RtlModules>
+  <TimingPaths>
+    <TPATH DATAPATH_DELAY="3.965" DATAPATH_LOGIC_DELAY="2.817" DATAPATH_NET_DELAY="1.148" ENDPOINT_PIN="grp_fir_Pipeline_sample_loop_fu_94/reg_184_reg[25]/D" LOGIC_LEVELS="13" MAX_FANOUT="195" SLACK="1.017" STARTPOINT_PIN="grp_fir_Pipeline_sample_loop_fu_94/ap_CS_fsm_reg[3]/C">
+      <CELL NAME="grp_fir_Pipeline_sample_loop_fu_94/ap_CS_fsm_reg[3]" PRIMITIVE_TYPE="REGISTER.SDR.FDRE" FILE_NAME="fir_fir_Pipeline_sample_loop.v" LINE_NUMBER="214" MODULE_INSTNAME="grp_fir_Pipeline_sample_loop_fu_94" IS_FUNCINST="0"/>
+      <CELL NAME="grp_fir_Pipeline_sample_loop_fu_94/mul_32s_32s_32_1_1_U12/tmp_product_i_48" PRIMITIVE_TYPE="CLB.LUT.LUT6" FILE_NAME="fir_fir_Pipeline_sample_loop.v" LINE_NUMBER="180" MODULE_INSTNAME="mul_32s_32s_32_1_1_U12" IS_FUNCINST="0"/>
+      <CELL NAME="grp_fir_Pipeline_sample_loop_fu_94/mul_32s_32s_32_1_1_U12/tmp_product_i_16" PRIMITIVE_TYPE="CLB.LUT.LUT6" FILE_NAME="fir_fir_Pipeline_sample_loop.v" LINE_NUMBER="180" MODULE_INSTNAME="mul_32s_32s_32_1_1_U12" IS_FUNCINST="0"/>
+      <CELL NAME="grp_fir_Pipeline_sample_loop_fu_94/mul_32s_32s_32_1_1_U12/tmp_product__0/DSP_A_B_DATA_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" FILE_NAME="" LINE_NUMBER="" MODULE_INSTNAME="mul_32s_32s_32_1_1_U12" IS_FUNCINST="0"/>
+      <CELL NAME="grp_fir_Pipeline_sample_loop_fu_94/mul_32s_32s_32_1_1_U12/tmp_product__0/DSP_PREADD_DATA_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" FILE_NAME="" LINE_NUMBER="" MODULE_INSTNAME="mul_32s_32s_32_1_1_U12" IS_FUNCINST="0"/>
+      <CELL NAME="grp_fir_Pipeline_sample_loop_fu_94/mul_32s_32s_32_1_1_U12/tmp_product__0/DSP_MULTIPLIER_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" FILE_NAME="" LINE_NUMBER="" MODULE_INSTNAME="mul_32s_32s_32_1_1_U12" IS_FUNCINST="0"/>
+      <CELL NAME="grp_fir_Pipeline_sample_loop_fu_94/mul_32s_32s_32_1_1_U12/tmp_product__0/DSP_M_DATA_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" FILE_NAME="" LINE_NUMBER="" MODULE_INSTNAME="mul_32s_32s_32_1_1_U12" IS_FUNCINST="0"/>
+      <CELL NAME="grp_fir_Pipeline_sample_loop_fu_94/mul_32s_32s_32_1_1_U12/tmp_product__0/DSP_ALU_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" FILE_NAME="" LINE_NUMBER="" MODULE_INSTNAME="mul_32s_32s_32_1_1_U12" IS_FUNCINST="0"/>
+      <CELL NAME="grp_fir_Pipeline_sample_loop_fu_94/mul_32s_32s_32_1_1_U12/tmp_product__0/DSP_OUTPUT_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" FILE_NAME="" LINE_NUMBER="" MODULE_INSTNAME="mul_32s_32s_32_1_1_U12" IS_FUNCINST="0"/>
+      <CELL NAME="grp_fir_Pipeline_sample_loop_fu_94/mul_32s_32s_32_1_1_U12/tmp_product__1/DSP_ALU_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" FILE_NAME="" LINE_NUMBER="" MODULE_INSTNAME="mul_32s_32s_32_1_1_U12" IS_FUNCINST="0"/>
+      <CELL NAME="grp_fir_Pipeline_sample_loop_fu_94/mul_32s_32s_32_1_1_U12/tmp_product__1/DSP_OUTPUT_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" FILE_NAME="" LINE_NUMBER="" MODULE_INSTNAME="mul_32s_32s_32_1_1_U12" IS_FUNCINST="0"/>
+      <CELL NAME="grp_fir_Pipeline_sample_loop_fu_94/mul_32s_32s_32_1_1_U12/reg_184[23]_i_8" PRIMITIVE_TYPE="CLB.LUT.LUT2" FILE_NAME="fir_mul_32s_32s_32_1_1.v" LINE_NUMBER="44" MODULE_INSTNAME="mul_32s_32s_32_1_1_U12" IS_FUNCINST="0"/>
+      <CELL NAME="grp_fir_Pipeline_sample_loop_fu_94/mul_32s_32s_32_1_1_U12/reg_184_reg[23]_i_1" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" FILE_NAME="fir_mul_32s_32s_32_1_1.v" LINE_NUMBER="44" MODULE_INSTNAME="mul_32s_32s_32_1_1_U12" IS_FUNCINST="0"/>
+      <CELL NAME="grp_fir_Pipeline_sample_loop_fu_94/mul_32s_32s_32_1_1_U12/reg_184_reg[31]_i_2" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" FILE_NAME="fir_mul_32s_32s_32_1_1.v" LINE_NUMBER="44" MODULE_INSTNAME="mul_32s_32s_32_1_1_U12" IS_FUNCINST="0"/>
+      <CELL NAME="grp_fir_Pipeline_sample_loop_fu_94/reg_184_reg[25]" PRIMITIVE_TYPE="REGISTER.SDR.FDRE" FILE_NAME="fir_fir_Pipeline_sample_loop.v" LINE_NUMBER="390" MODULE_INSTNAME="grp_fir_Pipeline_sample_loop_fu_94" IS_FUNCINST="0"/>
+      <MODULE_INSTANCES>grp_fir_Pipeline_sample_loop_fu_94 mul_32s_32s_32_1_1_U12 mul_32s_32s_32_1_1_U13</MODULE_INSTANCES>
+    </TPATH>
+    <TPATH DATAPATH_DELAY="3.965" DATAPATH_LOGIC_DELAY="2.817" DATAPATH_NET_DELAY="1.148" ENDPOINT_PIN="grp_fir_Pipeline_sample_loop_fu_94/reg_188_reg[25]/D" LOGIC_LEVELS="13" MAX_FANOUT="195" SLACK="1.017" STARTPOINT_PIN="grp_fir_Pipeline_sample_loop_fu_94/ap_CS_fsm_reg[3]/C">
+      <CELL NAME="grp_fir_Pipeline_sample_loop_fu_94/ap_CS_fsm_reg[3]" PRIMITIVE_TYPE="REGISTER.SDR.FDRE" FILE_NAME="fir_fir_Pipeline_sample_loop.v" LINE_NUMBER="214" MODULE_INSTNAME="grp_fir_Pipeline_sample_loop_fu_94" IS_FUNCINST="0"/>
+      <CELL NAME="grp_fir_Pipeline_sample_loop_fu_94/mul_32s_32s_32_1_1_U13/tmp_product_i_49__0" PRIMITIVE_TYPE="CLB.LUT.LUT6" FILE_NAME="fir_fir_Pipeline_sample_loop.v" LINE_NUMBER="180" MODULE_INSTNAME="mul_32s_32s_32_1_1_U13" IS_FUNCINST="0"/>
+      <CELL NAME="grp_fir_Pipeline_sample_loop_fu_94/mul_32s_32s_32_1_1_U13/tmp_product_i_16__0" PRIMITIVE_TYPE="CLB.LUT.LUT6" FILE_NAME="fir_fir_Pipeline_sample_loop.v" LINE_NUMBER="180" MODULE_INSTNAME="mul_32s_32s_32_1_1_U13" IS_FUNCINST="0"/>
+      <CELL NAME="grp_fir_Pipeline_sample_loop_fu_94/mul_32s_32s_32_1_1_U13/tmp_product__0/DSP_A_B_DATA_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" FILE_NAME="" LINE_NUMBER="" MODULE_INSTNAME="mul_32s_32s_32_1_1_U13" IS_FUNCINST="0"/>
+      <CELL NAME="grp_fir_Pipeline_sample_loop_fu_94/mul_32s_32s_32_1_1_U13/tmp_product__0/DSP_PREADD_DATA_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" FILE_NAME="" LINE_NUMBER="" MODULE_INSTNAME="mul_32s_32s_32_1_1_U13" IS_FUNCINST="0"/>
+      <CELL NAME="grp_fir_Pipeline_sample_loop_fu_94/mul_32s_32s_32_1_1_U13/tmp_product__0/DSP_MULTIPLIER_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" FILE_NAME="" LINE_NUMBER="" MODULE_INSTNAME="mul_32s_32s_32_1_1_U13" IS_FUNCINST="0"/>
+      <CELL NAME="grp_fir_Pipeline_sample_loop_fu_94/mul_32s_32s_32_1_1_U13/tmp_product__0/DSP_M_DATA_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" FILE_NAME="" LINE_NUMBER="" MODULE_INSTNAME="mul_32s_32s_32_1_1_U13" IS_FUNCINST="0"/>
+      <CELL NAME="grp_fir_Pipeline_sample_loop_fu_94/mul_32s_32s_32_1_1_U13/tmp_product__0/DSP_ALU_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" FILE_NAME="" LINE_NUMBER="" MODULE_INSTNAME="mul_32s_32s_32_1_1_U13" IS_FUNCINST="0"/>
+      <CELL NAME="grp_fir_Pipeline_sample_loop_fu_94/mul_32s_32s_32_1_1_U13/tmp_product__0/DSP_OUTPUT_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" FILE_NAME="" LINE_NUMBER="" MODULE_INSTNAME="mul_32s_32s_32_1_1_U13" IS_FUNCINST="0"/>
+      <CELL NAME="grp_fir_Pipeline_sample_loop_fu_94/mul_32s_32s_32_1_1_U13/tmp_product__1/DSP_ALU_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" FILE_NAME="" LINE_NUMBER="" MODULE_INSTNAME="mul_32s_32s_32_1_1_U13" IS_FUNCINST="0"/>
+      <CELL NAME="grp_fir_Pipeline_sample_loop_fu_94/mul_32s_32s_32_1_1_U13/tmp_product__1/DSP_OUTPUT_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" FILE_NAME="" LINE_NUMBER="" MODULE_INSTNAME="mul_32s_32s_32_1_1_U13" IS_FUNCINST="0"/>
+      <CELL NAME="grp_fir_Pipeline_sample_loop_fu_94/mul_32s_32s_32_1_1_U13/reg_188[23]_i_8" PRIMITIVE_TYPE="CLB.LUT.LUT2" FILE_NAME="fir_mul_32s_32s_32_1_1.v" LINE_NUMBER="44" MODULE_INSTNAME="mul_32s_32s_32_1_1_U13" IS_FUNCINST="0"/>
+      <CELL NAME="grp_fir_Pipeline_sample_loop_fu_94/mul_32s_32s_32_1_1_U13/reg_188_reg[23]_i_1" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" FILE_NAME="fir_mul_32s_32s_32_1_1.v" LINE_NUMBER="44" MODULE_INSTNAME="mul_32s_32s_32_1_1_U13" IS_FUNCINST="0"/>
+      <CELL NAME="grp_fir_Pipeline_sample_loop_fu_94/mul_32s_32s_32_1_1_U13/reg_188_reg[31]_i_2" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" FILE_NAME="fir_mul_32s_32s_32_1_1.v" LINE_NUMBER="44" MODULE_INSTNAME="mul_32s_32s_32_1_1_U13" IS_FUNCINST="0"/>
+      <CELL NAME="grp_fir_Pipeline_sample_loop_fu_94/reg_188_reg[25]" PRIMITIVE_TYPE="REGISTER.SDR.FDRE" FILE_NAME="fir_fir_Pipeline_sample_loop.v" LINE_NUMBER="396" MODULE_INSTNAME="grp_fir_Pipeline_sample_loop_fu_94" IS_FUNCINST="0"/>
+      <MODULE_INSTANCES>grp_fir_Pipeline_sample_loop_fu_94 mul_32s_32s_32_1_1_U12 mul_32s_32s_32_1_1_U13</MODULE_INSTANCES>
+    </TPATH>
+    <TPATH DATAPATH_DELAY="3.962" DATAPATH_LOGIC_DELAY="2.857" DATAPATH_NET_DELAY="1.105" ENDPOINT_PIN="grp_fir_Pipeline_sample_loop_fu_94/reg_184_reg[31]/D" LOGIC_LEVELS="13" MAX_FANOUT="195" SLACK="1.020" STARTPOINT_PIN="grp_fir_Pipeline_sample_loop_fu_94/ap_CS_fsm_reg[3]/C">
+      <CELL NAME="grp_fir_Pipeline_sample_loop_fu_94/ap_CS_fsm_reg[3]" PRIMITIVE_TYPE="REGISTER.SDR.FDRE" FILE_NAME="fir_fir_Pipeline_sample_loop.v" LINE_NUMBER="214" MODULE_INSTNAME="grp_fir_Pipeline_sample_loop_fu_94" IS_FUNCINST="0"/>
+      <CELL NAME="grp_fir_Pipeline_sample_loop_fu_94/mul_32s_32s_32_1_1_U12/tmp_product_i_48" PRIMITIVE_TYPE="CLB.LUT.LUT6" FILE_NAME="fir_fir_Pipeline_sample_loop.v" LINE_NUMBER="180" MODULE_INSTNAME="mul_32s_32s_32_1_1_U12" IS_FUNCINST="0"/>
+      <CELL NAME="grp_fir_Pipeline_sample_loop_fu_94/mul_32s_32s_32_1_1_U12/tmp_product_i_16" PRIMITIVE_TYPE="CLB.LUT.LUT6" FILE_NAME="fir_fir_Pipeline_sample_loop.v" LINE_NUMBER="180" MODULE_INSTNAME="mul_32s_32s_32_1_1_U12" IS_FUNCINST="0"/>
+      <CELL NAME="grp_fir_Pipeline_sample_loop_fu_94/mul_32s_32s_32_1_1_U12/tmp_product__0/DSP_A_B_DATA_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" FILE_NAME="" LINE_NUMBER="" MODULE_INSTNAME="mul_32s_32s_32_1_1_U12" IS_FUNCINST="0"/>
+      <CELL NAME="grp_fir_Pipeline_sample_loop_fu_94/mul_32s_32s_32_1_1_U12/tmp_product__0/DSP_PREADD_DATA_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" FILE_NAME="" LINE_NUMBER="" MODULE_INSTNAME="mul_32s_32s_32_1_1_U12" IS_FUNCINST="0"/>
+      <CELL NAME="grp_fir_Pipeline_sample_loop_fu_94/mul_32s_32s_32_1_1_U12/tmp_product__0/DSP_MULTIPLIER_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" FILE_NAME="" LINE_NUMBER="" MODULE_INSTNAME="mul_32s_32s_32_1_1_U12" IS_FUNCINST="0"/>
+      <CELL NAME="grp_fir_Pipeline_sample_loop_fu_94/mul_32s_32s_32_1_1_U12/tmp_product__0/DSP_M_DATA_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" FILE_NAME="" LINE_NUMBER="" MODULE_INSTNAME="mul_32s_32s_32_1_1_U12" IS_FUNCINST="0"/>
+      <CELL NAME="grp_fir_Pipeline_sample_loop_fu_94/mul_32s_32s_32_1_1_U12/tmp_product__0/DSP_ALU_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" FILE_NAME="" LINE_NUMBER="" MODULE_INSTNAME="mul_32s_32s_32_1_1_U12" IS_FUNCINST="0"/>
+      <CELL NAME="grp_fir_Pipeline_sample_loop_fu_94/mul_32s_32s_32_1_1_U12/tmp_product__0/DSP_OUTPUT_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" FILE_NAME="" LINE_NUMBER="" MODULE_INSTNAME="mul_32s_32s_32_1_1_U12" IS_FUNCINST="0"/>
+      <CELL NAME="grp_fir_Pipeline_sample_loop_fu_94/mul_32s_32s_32_1_1_U12/tmp_product__1/DSP_ALU_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" FILE_NAME="" LINE_NUMBER="" MODULE_INSTNAME="mul_32s_32s_32_1_1_U12" IS_FUNCINST="0"/>
+      <CELL NAME="grp_fir_Pipeline_sample_loop_fu_94/mul_32s_32s_32_1_1_U12/tmp_product__1/DSP_OUTPUT_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" FILE_NAME="" LINE_NUMBER="" MODULE_INSTNAME="mul_32s_32s_32_1_1_U12" IS_FUNCINST="0"/>
+      <CELL NAME="grp_fir_Pipeline_sample_loop_fu_94/mul_32s_32s_32_1_1_U12/reg_184[23]_i_8" PRIMITIVE_TYPE="CLB.LUT.LUT2" FILE_NAME="fir_mul_32s_32s_32_1_1.v" LINE_NUMBER="44" MODULE_INSTNAME="mul_32s_32s_32_1_1_U12" IS_FUNCINST="0"/>
+      <CELL NAME="grp_fir_Pipeline_sample_loop_fu_94/mul_32s_32s_32_1_1_U12/reg_184_reg[23]_i_1" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" FILE_NAME="fir_mul_32s_32s_32_1_1.v" LINE_NUMBER="44" MODULE_INSTNAME="mul_32s_32s_32_1_1_U12" IS_FUNCINST="0"/>
+      <CELL NAME="grp_fir_Pipeline_sample_loop_fu_94/mul_32s_32s_32_1_1_U12/reg_184_reg[31]_i_2" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" FILE_NAME="fir_mul_32s_32s_32_1_1.v" LINE_NUMBER="44" MODULE_INSTNAME="mul_32s_32s_32_1_1_U12" IS_FUNCINST="0"/>
+      <CELL NAME="grp_fir_Pipeline_sample_loop_fu_94/reg_184_reg[31]" PRIMITIVE_TYPE="REGISTER.SDR.FDRE" FILE_NAME="fir_fir_Pipeline_sample_loop.v" LINE_NUMBER="390" MODULE_INSTNAME="grp_fir_Pipeline_sample_loop_fu_94" IS_FUNCINST="0"/>
+      <MODULE_INSTANCES>grp_fir_Pipeline_sample_loop_fu_94 mul_32s_32s_32_1_1_U12 mul_32s_32s_32_1_1_U13</MODULE_INSTANCES>
+    </TPATH>
+    <TPATH DATAPATH_DELAY="3.962" DATAPATH_LOGIC_DELAY="2.857" DATAPATH_NET_DELAY="1.105" ENDPOINT_PIN="grp_fir_Pipeline_sample_loop_fu_94/reg_188_reg[31]/D" LOGIC_LEVELS="13" MAX_FANOUT="195" SLACK="1.020" STARTPOINT_PIN="grp_fir_Pipeline_sample_loop_fu_94/ap_CS_fsm_reg[3]/C">
+      <CELL NAME="grp_fir_Pipeline_sample_loop_fu_94/ap_CS_fsm_reg[3]" PRIMITIVE_TYPE="REGISTER.SDR.FDRE" FILE_NAME="fir_fir_Pipeline_sample_loop.v" LINE_NUMBER="214" MODULE_INSTNAME="grp_fir_Pipeline_sample_loop_fu_94" IS_FUNCINST="0"/>
+      <CELL NAME="grp_fir_Pipeline_sample_loop_fu_94/mul_32s_32s_32_1_1_U13/tmp_product_i_49__0" PRIMITIVE_TYPE="CLB.LUT.LUT6" FILE_NAME="fir_fir_Pipeline_sample_loop.v" LINE_NUMBER="180" MODULE_INSTNAME="mul_32s_32s_32_1_1_U13" IS_FUNCINST="0"/>
+      <CELL NAME="grp_fir_Pipeline_sample_loop_fu_94/mul_32s_32s_32_1_1_U13/tmp_product_i_16__0" PRIMITIVE_TYPE="CLB.LUT.LUT6" FILE_NAME="fir_fir_Pipeline_sample_loop.v" LINE_NUMBER="180" MODULE_INSTNAME="mul_32s_32s_32_1_1_U13" IS_FUNCINST="0"/>
+      <CELL NAME="grp_fir_Pipeline_sample_loop_fu_94/mul_32s_32s_32_1_1_U13/tmp_product__0/DSP_A_B_DATA_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" FILE_NAME="" LINE_NUMBER="" MODULE_INSTNAME="mul_32s_32s_32_1_1_U13" IS_FUNCINST="0"/>
+      <CELL NAME="grp_fir_Pipeline_sample_loop_fu_94/mul_32s_32s_32_1_1_U13/tmp_product__0/DSP_PREADD_DATA_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" FILE_NAME="" LINE_NUMBER="" MODULE_INSTNAME="mul_32s_32s_32_1_1_U13" IS_FUNCINST="0"/>
+      <CELL NAME="grp_fir_Pipeline_sample_loop_fu_94/mul_32s_32s_32_1_1_U13/tmp_product__0/DSP_MULTIPLIER_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" FILE_NAME="" LINE_NUMBER="" MODULE_INSTNAME="mul_32s_32s_32_1_1_U13" IS_FUNCINST="0"/>
+      <CELL NAME="grp_fir_Pipeline_sample_loop_fu_94/mul_32s_32s_32_1_1_U13/tmp_product__0/DSP_M_DATA_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" FILE_NAME="" LINE_NUMBER="" MODULE_INSTNAME="mul_32s_32s_32_1_1_U13" IS_FUNCINST="0"/>
+      <CELL NAME="grp_fir_Pipeline_sample_loop_fu_94/mul_32s_32s_32_1_1_U13/tmp_product__0/DSP_ALU_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" FILE_NAME="" LINE_NUMBER="" MODULE_INSTNAME="mul_32s_32s_32_1_1_U13" IS_FUNCINST="0"/>
+      <CELL NAME="grp_fir_Pipeline_sample_loop_fu_94/mul_32s_32s_32_1_1_U13/tmp_product__0/DSP_OUTPUT_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" FILE_NAME="" LINE_NUMBER="" MODULE_INSTNAME="mul_32s_32s_32_1_1_U13" IS_FUNCINST="0"/>
+      <CELL NAME="grp_fir_Pipeline_sample_loop_fu_94/mul_32s_32s_32_1_1_U13/tmp_product__1/DSP_ALU_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" FILE_NAME="" LINE_NUMBER="" MODULE_INSTNAME="mul_32s_32s_32_1_1_U13" IS_FUNCINST="0"/>
+      <CELL NAME="grp_fir_Pipeline_sample_loop_fu_94/mul_32s_32s_32_1_1_U13/tmp_product__1/DSP_OUTPUT_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" FILE_NAME="" LINE_NUMBER="" MODULE_INSTNAME="mul_32s_32s_32_1_1_U13" IS_FUNCINST="0"/>
+      <CELL NAME="grp_fir_Pipeline_sample_loop_fu_94/mul_32s_32s_32_1_1_U13/reg_188[23]_i_8" PRIMITIVE_TYPE="CLB.LUT.LUT2" FILE_NAME="fir_mul_32s_32s_32_1_1.v" LINE_NUMBER="44" MODULE_INSTNAME="mul_32s_32s_32_1_1_U13" IS_FUNCINST="0"/>
+      <CELL NAME="grp_fir_Pipeline_sample_loop_fu_94/mul_32s_32s_32_1_1_U13/reg_188_reg[23]_i_1" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" FILE_NAME="fir_mul_32s_32s_32_1_1.v" LINE_NUMBER="44" MODULE_INSTNAME="mul_32s_32s_32_1_1_U13" IS_FUNCINST="0"/>
+      <CELL NAME="grp_fir_Pipeline_sample_loop_fu_94/mul_32s_32s_32_1_1_U13/reg_188_reg[31]_i_2" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" FILE_NAME="fir_mul_32s_32s_32_1_1.v" LINE_NUMBER="44" MODULE_INSTNAME="mul_32s_32s_32_1_1_U13" IS_FUNCINST="0"/>
+      <CELL NAME="grp_fir_Pipeline_sample_loop_fu_94/reg_188_reg[31]" PRIMITIVE_TYPE="REGISTER.SDR.FDRE" FILE_NAME="fir_fir_Pipeline_sample_loop.v" LINE_NUMBER="396" MODULE_INSTNAME="grp_fir_Pipeline_sample_loop_fu_94" IS_FUNCINST="0"/>
+      <MODULE_INSTANCES>grp_fir_Pipeline_sample_loop_fu_94 mul_32s_32s_32_1_1_U12 mul_32s_32s_32_1_1_U13</MODULE_INSTANCES>
+    </TPATH>
+    <TPATH DATAPATH_DELAY="3.949" DATAPATH_LOGIC_DELAY="2.844" DATAPATH_NET_DELAY="1.105" ENDPOINT_PIN="grp_fir_Pipeline_sample_loop_fu_94/reg_184_reg[30]/D" LOGIC_LEVELS="13" MAX_FANOUT="195" SLACK="1.033" STARTPOINT_PIN="grp_fir_Pipeline_sample_loop_fu_94/ap_CS_fsm_reg[3]/C">
+      <CELL NAME="grp_fir_Pipeline_sample_loop_fu_94/ap_CS_fsm_reg[3]" PRIMITIVE_TYPE="REGISTER.SDR.FDRE" FILE_NAME="fir_fir_Pipeline_sample_loop.v" LINE_NUMBER="214" MODULE_INSTNAME="grp_fir_Pipeline_sample_loop_fu_94" IS_FUNCINST="0"/>
+      <CELL NAME="grp_fir_Pipeline_sample_loop_fu_94/mul_32s_32s_32_1_1_U12/tmp_product_i_48" PRIMITIVE_TYPE="CLB.LUT.LUT6" FILE_NAME="fir_fir_Pipeline_sample_loop.v" LINE_NUMBER="180" MODULE_INSTNAME="mul_32s_32s_32_1_1_U12" IS_FUNCINST="0"/>
+      <CELL NAME="grp_fir_Pipeline_sample_loop_fu_94/mul_32s_32s_32_1_1_U12/tmp_product_i_16" PRIMITIVE_TYPE="CLB.LUT.LUT6" FILE_NAME="fir_fir_Pipeline_sample_loop.v" LINE_NUMBER="180" MODULE_INSTNAME="mul_32s_32s_32_1_1_U12" IS_FUNCINST="0"/>
+      <CELL NAME="grp_fir_Pipeline_sample_loop_fu_94/mul_32s_32s_32_1_1_U12/tmp_product__0/DSP_A_B_DATA_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" FILE_NAME="" LINE_NUMBER="" MODULE_INSTNAME="mul_32s_32s_32_1_1_U12" IS_FUNCINST="0"/>
+      <CELL NAME="grp_fir_Pipeline_sample_loop_fu_94/mul_32s_32s_32_1_1_U12/tmp_product__0/DSP_PREADD_DATA_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" FILE_NAME="" LINE_NUMBER="" MODULE_INSTNAME="mul_32s_32s_32_1_1_U12" IS_FUNCINST="0"/>
+      <CELL NAME="grp_fir_Pipeline_sample_loop_fu_94/mul_32s_32s_32_1_1_U12/tmp_product__0/DSP_MULTIPLIER_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" FILE_NAME="" LINE_NUMBER="" MODULE_INSTNAME="mul_32s_32s_32_1_1_U12" IS_FUNCINST="0"/>
+      <CELL NAME="grp_fir_Pipeline_sample_loop_fu_94/mul_32s_32s_32_1_1_U12/tmp_product__0/DSP_M_DATA_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" FILE_NAME="" LINE_NUMBER="" MODULE_INSTNAME="mul_32s_32s_32_1_1_U12" IS_FUNCINST="0"/>
+      <CELL NAME="grp_fir_Pipeline_sample_loop_fu_94/mul_32s_32s_32_1_1_U12/tmp_product__0/DSP_ALU_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" FILE_NAME="" LINE_NUMBER="" MODULE_INSTNAME="mul_32s_32s_32_1_1_U12" IS_FUNCINST="0"/>
+      <CELL NAME="grp_fir_Pipeline_sample_loop_fu_94/mul_32s_32s_32_1_1_U12/tmp_product__0/DSP_OUTPUT_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" FILE_NAME="" LINE_NUMBER="" MODULE_INSTNAME="mul_32s_32s_32_1_1_U12" IS_FUNCINST="0"/>
+      <CELL NAME="grp_fir_Pipeline_sample_loop_fu_94/mul_32s_32s_32_1_1_U12/tmp_product__1/DSP_ALU_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" FILE_NAME="" LINE_NUMBER="" MODULE_INSTNAME="mul_32s_32s_32_1_1_U12" IS_FUNCINST="0"/>
+      <CELL NAME="grp_fir_Pipeline_sample_loop_fu_94/mul_32s_32s_32_1_1_U12/tmp_product__1/DSP_OUTPUT_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" FILE_NAME="" LINE_NUMBER="" MODULE_INSTNAME="mul_32s_32s_32_1_1_U12" IS_FUNCINST="0"/>
+      <CELL NAME="grp_fir_Pipeline_sample_loop_fu_94/mul_32s_32s_32_1_1_U12/reg_184[23]_i_8" PRIMITIVE_TYPE="CLB.LUT.LUT2" FILE_NAME="fir_mul_32s_32s_32_1_1.v" LINE_NUMBER="44" MODULE_INSTNAME="mul_32s_32s_32_1_1_U12" IS_FUNCINST="0"/>
+      <CELL NAME="grp_fir_Pipeline_sample_loop_fu_94/mul_32s_32s_32_1_1_U12/reg_184_reg[23]_i_1" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" FILE_NAME="fir_mul_32s_32s_32_1_1.v" LINE_NUMBER="44" MODULE_INSTNAME="mul_32s_32s_32_1_1_U12" IS_FUNCINST="0"/>
+      <CELL NAME="grp_fir_Pipeline_sample_loop_fu_94/mul_32s_32s_32_1_1_U12/reg_184_reg[31]_i_2" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" FILE_NAME="fir_mul_32s_32s_32_1_1.v" LINE_NUMBER="44" MODULE_INSTNAME="mul_32s_32s_32_1_1_U12" IS_FUNCINST="0"/>
+      <CELL NAME="grp_fir_Pipeline_sample_loop_fu_94/reg_184_reg[30]" PRIMITIVE_TYPE="REGISTER.SDR.FDRE" FILE_NAME="fir_fir_Pipeline_sample_loop.v" LINE_NUMBER="390" MODULE_INSTNAME="grp_fir_Pipeline_sample_loop_fu_94" IS_FUNCINST="0"/>
+      <MODULE_INSTANCES>grp_fir_Pipeline_sample_loop_fu_94 mul_32s_32s_32_1_1_U12 mul_32s_32s_32_1_1_U13</MODULE_INSTANCES>
+    </TPATH>
+  </TimingPaths>
+  <VivadoReportFiles>
+    <ReportFile TYPE="design_analysis" PATH="verilog/report/fir_design_analysis_synth.rpt"/>
+    <ReportFile TYPE="failfast" PATH="verilog/report/fir_failfast_synth.rpt"/>
+    <ReportFile TYPE="power" PATH="verilog/report/fir_power_synth.rpt"/>
+    <ReportFile TYPE="timing" PATH="verilog/report/fir_timing_synth.rpt"/>
+    <ReportFile TYPE="timing_paths" PATH="verilog/report/fir_timing_paths_synth.rpt"/>
+    <ReportFile TYPE="utilization" PATH="verilog/report/fir_utilization_synth.rpt"/>
+    <ReportFile TYPE="utilization_hierarchical" PATH="verilog/report/fir_utilization_hierarchical_synth.rpt"/>
+  </VivadoReportFiles>
+  <GeneralInfo NAME="General Information">
+    <item NAME="Date" VALUE="Tue Feb 04 17:25:07 EST 2025"/>
+    <item NAME="Version" VALUE="2024.2 (Build 5238294 on Nov  8 2024)"/>
+    <item NAME="Project" VALUE="fir2"/>
+    <item NAME="Solution" VALUE="hls (Vitis Kernel Flow Target)"/>
+    <item NAME="Product family" VALUE="zynquplusRFSOC"/>
+    <item NAME="Target device" VALUE="xczu48dr-ffvg1517-2-e"/>
+  </GeneralInfo>
+  <RunOptions NAME="Run Constraints &amp; Options">
+    <General NAME="Design Constraints &amp; Options">
+      <item NAME="RTL Synthesis target clock" VALUE="5 ns"/>
+      <item NAME="C-Synthesis target clock" VALUE="5 ns"/>
+      <item NAME="C-Synthesis uncertainty" VALUE="27%"/>
+      <item NAME="config_export -ip_xdc_file" VALUE=""/>
+      <item NAME="config_export -ip_xdc_ooc_file" VALUE=""/>
+    </General>
+    <Syn NAME="RTL Synthesis Options">
+      <item NAME="config_export -vivado_synth_strategy" VALUE="default"/>
+      <item NAME="config_export -vivado_synth_design_args" VALUE="-directive sdx_optimization_effort_high"/>
+    </Syn>
+    <Reporting NAME="Reporting Options">
+      <item NAME="config_export -vivado_report_level" VALUE="2"/>
+      <item NAME="config_export -vivado_max_timing_paths" VALUE="10"/>
+    </Reporting>
+  </RunOptions>
+</profile>
+

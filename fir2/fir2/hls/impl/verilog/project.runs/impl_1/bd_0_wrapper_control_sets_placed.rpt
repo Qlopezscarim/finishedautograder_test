@@ -1,0 +1,115 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (lin64) Build 5239630 Fri Nov 08 22:34:34 MST 2024
+| Date         : Tue Feb  4 17:23:46 2025
+| Host         : ece-lnx-4511c running 64-bit Red Hat Enterprise Linux Server release 7.9 (Maipo)
+| Command      : report_control_sets -verbose -file bd_0_wrapper_control_sets_placed.rpt
+| Design       : bd_0_wrapper
+| Device       : xczu48dr
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |    37 |
+|    Minimum number of control sets                        |    37 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |    14 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |    37 |
+| >= 0 to < 4        |     3 |
+| >= 4 to < 6        |     3 |
+| >= 6 to < 8        |     0 |
+| >= 8 to < 10       |     1 |
+| >= 10 to < 12      |     0 |
+| >= 12 to < 14      |     0 |
+| >= 14 to < 16      |     0 |
+| >= 16              |    30 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |               8 |            6 |
+| No           | No                    | Yes                    |               0 |            0 |
+| No           | Yes                   | No                     |              51 |           14 |
+| Yes          | No                    | No                     |             901 |          157 |
+| Yes          | No                    | Yes                    |               0 |            0 |
+| Yes          | Yes                   | No                     |             310 |           62 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++--------------+--------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+------------------+----------------+--------------+
+| Clock Signal |                                           Enable Signal                                          |                                                               Set/Reset Signal                                                               | Slice Load Count | Bel Load Count | Bels / Slice |
++--------------+--------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+------------------+----------------+--------------+
+|  ap_clk      | bd_0_i/hls_inst/inst/control_s_axi_U/waddr                                                       |                                                                                                                                              |                1 |              2 |         2.00 |
+|  ap_clk      | bd_0_i/hls_inst/inst/control_s_axi_U/int_ier10_out                                               | bd_0_i/hls_inst/inst/ap_rst_n_inv                                                                                                            |                1 |              2 |         2.00 |
+|  ap_clk      | bd_0_i/hls_inst/inst/control_s_axi_U/ar_hs                                                       |                                                                                                                                              |                1 |              2 |         2.00 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_fir_Pipeline_read_a_fu_78/flow_control_loop_pipe_sequential_init_U/E[0] | bd_0_i/hls_inst/inst/grp_fir_Pipeline_read_a_fu_78/flow_control_loop_pipe_sequential_init_U/SR[0]                                            |                1 |              4 |         4.00 |
+|  ap_clk      | bd_0_i/hls_inst/inst/regslice_both_a_U/ap_block_pp0_stage0_subdone                               | bd_0_i/hls_inst/inst/grp_fir_Pipeline_read_a_fu_78/flow_control_loop_pipe_sequential_init_U/grp_fir_Pipeline_read_a_fu_78_ap_start_reg_reg_0 |                1 |              4 |         4.00 |
+|  ap_clk      | bd_0_i/hls_inst/inst/control_s_axi_U/ar_hs                                                       | bd_0_i/hls_inst/inst/control_s_axi_U/rdata[9]_i_1_n_0                                                                                        |                1 |              5 |         5.00 |
+|  ap_clk      |                                                                                                  |                                                                                                                                              |                6 |              8 |         1.33 |
+|  ap_clk      | bd_0_i/hls_inst/inst/regslice_both_in_r_U/load_p1                                                |                                                                                                                                              |                9 |             32 |         3.56 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_fir_Pipeline_sample_loop_fu_94/ap_CS_fsm_reg[2]_0                       | bd_0_i/hls_inst/inst/grp_fir_Pipeline_sample_loop_fu_94/flow_control_loop_pipe_sequential_init_U/SR[0]                                       |               22 |             32 |         1.45 |
+|  ap_clk      | bd_0_i/hls_inst/inst/regslice_both_in_r_U/load_p2                                                |                                                                                                                                              |                9 |             32 |         3.56 |
+|  ap_clk      | bd_0_i/hls_inst/inst/regslice_both_out_r_U/load_p1                                               |                                                                                                                                              |                9 |             32 |         3.56 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_fir_Pipeline_sample_loop_fu_94/out_r_TDATA_reg1                         |                                                                                                                                              |                4 |             32 |         8.00 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_fir_Pipeline_sample_loop_fu_94/reg_1840                                 |                                                                                                                                              |                7 |             32 |         4.57 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_fir_Pipeline_sample_loop_fu_94/reg_1880                                 |                                                                                                                                              |                8 |             32 |         4.00 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_fir_Pipeline_sample_loop_fu_94/E[0]                                     |                                                                                                                                              |                4 |             32 |         8.00 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_fir_Pipeline_sample_loop_fu_94/add_ln29_reg_5170                        |                                                                                                                                              |                4 |             32 |         8.00 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_fir_Pipeline_sample_loop_fu_94/ap_CS_fsm_pp0_stage0                     |                                                                                                                                              |                4 |             32 |         8.00 |
+|  ap_clk      | bd_0_i/hls_inst/inst/regslice_both_a_U/load_p2                                                   |                                                                                                                                              |               10 |             32 |         3.20 |
+|  ap_clk      | bd_0_i/hls_inst/inst/regslice_both_a_U/load_p1                                                   |                                                                                                                                              |               10 |             32 |         3.20 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_fir_Pipeline_read_a_fu_78/empty_fu_740                                  |                                                                                                                                              |               22 |             32 |         1.45 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_fir_Pipeline_read_a_fu_78/empty_27_fu_1100                              |                                                                                                                                              |               24 |             32 |         1.33 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_fir_Pipeline_read_a_fu_78/empty_26_fu_1060                              |                                                                                                                                              |               19 |             32 |         1.68 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_fir_Pipeline_read_a_fu_78/empty_25_fu_1020                              |                                                                                                                                              |               18 |             32 |         1.78 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_fir_Pipeline_read_a_fu_78/empty_24_fu_980                               |                                                                                                                                              |               23 |             32 |         1.39 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_fir_Pipeline_read_a_fu_78/empty_23_fu_940                               |                                                                                                                                              |               17 |             32 |         1.88 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_fir_Pipeline_read_a_fu_78/empty_22_fu_900                               |                                                                                                                                              |               22 |             32 |         1.45 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_fir_Pipeline_read_a_fu_78/empty_20_fu_820                               |                                                                                                                                              |               23 |             32 |         1.39 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_fir_Pipeline_read_a_fu_78/empty_19_fu_780                               |                                                                                                                                              |               21 |             32 |         1.52 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_fir_Pipeline_read_a_fu_78/empty_21_fu_860                               |                                                                                                                                              |               20 |             32 |         1.60 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_fir_Pipeline_sample_loop_fu_94/icmp_ln18_reg_513[0]_i_1_n_0             |                                                                                                                                              |               22 |             33 |         1.50 |
+|  ap_clk      |                                                                                                  | bd_0_i/hls_inst/inst/ap_rst_n_inv                                                                                                            |               14 |             51 |         3.64 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_fir_Pipeline_sample_loop_fu_94/ap_CS_fsm_pp0_stage3                     |                                                                                                                                              |               41 |             64 |         1.56 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_fir_Pipeline_sample_loop_fu_94/ap_ready_int                             |                                                                                                                                              |               11 |             64 |         5.82 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_fir_Pipeline_sample_loop_fu_94/empty_11_fu_7006_out                     | bd_0_i/hls_inst/inst/grp_fir_Pipeline_sample_loop_fu_94/flow_control_loop_pipe_sequential_init_U/SR[0]                                       |               29 |             64 |         2.21 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_fir_Pipeline_sample_loop_fu_94/grp_fu_175_p010_out                      |                                                                                                                                              |               13 |             64 |         4.92 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_fir_Pipeline_sample_loop_fu_94/empty_16_fu_900                          | bd_0_i/hls_inst/inst/grp_fir_Pipeline_sample_loop_fu_94/flow_control_loop_pipe_sequential_init_U/SR[0]                                       |               26 |             71 |         2.73 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_fir_Pipeline_sample_loop_fu_94/empty_12_fu_740                          | bd_0_i/hls_inst/inst/grp_fir_Pipeline_sample_loop_fu_94/flow_control_loop_pipe_sequential_init_U/SR[0]                                       |               35 |            128 |         3.66 |
++--------------+--------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+------------------+----------------+--------------+
+
+
