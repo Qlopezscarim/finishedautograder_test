@@ -1,0 +1,4 @@
+<pragmas>
+<pragma file="fir.cpp" line="4" pragmaType="interface" parentfunction="fir" mode="axis" port="in" register="1" register_mode="both" name="" depth="-1"/>
+<pragma file="fir.cpp" line="5" pragmaType="interface" parentfunction="fir" mode="axis" port="out" register="1" register_mode="both" name="" depth="-1"/>
+</pragmas>

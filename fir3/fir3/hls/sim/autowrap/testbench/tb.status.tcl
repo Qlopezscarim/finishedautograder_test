@@ -1,0 +1,1 @@
+set ::AESL_AUTOSIM::gTopFileName /ecel/UFAD/qlopezscarim/Desktop/lab3_vitis/fir3/fir3/hls/./sim/autowrap/testbench/fir.cpp_pre.cpp.tb.cpp

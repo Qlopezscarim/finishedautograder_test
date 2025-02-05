@@ -1,0 +1,39 @@
+<xilinx:hls_fe_msgs>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="directive:1:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="fir" ARG_PragmaIsValid="1" ARG_PragmaOptions="name=fir" ARG_PragmaType="top" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="fir.cpp:4:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="fir" ARG_PragmaIsValid="1" ARG_PragmaOptions="axis port=in" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="fir.cpp:5:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="fir" ARG_PragmaIsValid="1" ARG_PragmaOptions="axis port=out" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="fir.cpp:17:17" msg_body="Loop 'shift_loop' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="shift_loop"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="fir.cpp:24:15" msg_body="Loop 'fir_loop' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="fir_loop"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="fir.cpp:3:0" msg_body="Unrolling loop 'shift_loop' (fir.cpp:17:17) in function 'fir' completely with a factor of 9">
+        <args Factor="9" LoopLoc="fir.cpp:17:17" LoopName="shift_loop"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="fir.cpp:3:0" msg_body="Unrolling loop 'fir_loop' (fir.cpp:24:15) in function 'fir' completely with a factor of 10">
+        <args Factor="10" LoopLoc="fir.cpp:24:15" LoopName="fir_loop"/>
+    </msg>
+    <msg msg_groups="AUTOMATION_VERBOSE_PASSED" msg_id="214-335" msg_severity="INFO" msg_loc="fir.cpp:9:7" msg_body="array_partition dim=1 type=complete  variable=reg 1 fir fir.cpp:9:7 reg">
+        <args PragmaFunction="fir" PragmaIsAuto="1" PragmaOptions="dim=1 type=complete  variable=reg" PragmaType="array_partition" VarName="reg" varLoc="fir.cpp:9:7"/>
+    </msg>
+    <msg msg_groups="AUTOMATION PRAGMA_MISC" msg_id="214-270" msg_severity="INFO" msg_loc="fir.cpp:9:7" msg_body="Inferring pragma 'array_partition type=complete dim=1' for array 'reg' due to pipeline pragma">
+        <args Dim="1" Mode="complete" Name="reg" PragmaType="array_partition"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="fir.cpp:9:7" msg_body="Applying array_partition to 'reg': Complete partitioning on dimension 1.">
+        <args Dim="1" Mode="Complete" UOName="reg"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="fir.cpp:3:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port 'in_r'">
+        <args Name="in_r"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="fir.cpp:3:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port 'out_r'">
+        <args Name="out_r"/>
+    </msg>
+</xilinx:hls_fe_msgs>
+
