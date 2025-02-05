@@ -1,0 +1,157 @@
+<ENTRY>
+{
+ "thisFile": "/ecel/UFAD/qlopezscarim/Desktop/lab3_vitis/fir1/fir1/fir1.hlsrun_csim_summary",
+ "connectId": "",
+ "serverToken": "",
+ "timestamp": "0"
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_CmdStep",
+ "dateTimestamp": "Tue Feb  4 14:16:51 2025",
+ "timestampMillis": "1738696611339",
+ "buildStep": {
+  "cmdId": "8f81b88d-83b0-4fad-b9f6-d0f3ce7c7154",
+  "name": "vitis-run",
+  "logFile": "/ecel/UFAD/qlopezscarim/Desktop/lab3_vitis/fir1/fir1/logs/fir1.steps.log",
+  "commandLine": "/apps/xilinx24/Vitis/2024.2/bin/unwrapped/lnx64.o/vitis-run  --mode hls --csim --config /ecel/UFAD/qlopezscarim/Desktop/lab3_vitis/fir1/hls_config.cfg --work_dir fir1 ",
+  "args": [
+   "--mode",
+   "hls",
+   "--csim",
+   "--config",
+   "/ecel/UFAD/qlopezscarim/Desktop/lab3_vitis/fir1/hls_config.cfg",
+   "--work_dir",
+   "fir1"
+  ],
+  "iniFiles": [],
+  "cwd": "/ecel/UFAD/qlopezscarim/Desktop/lab3_vitis/fir1"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Tue Feb  4 14:16:51 2025",
+ "timestampMillis": "1738696611340",
+ "status": {
+  "cmdId": "8f81b88d-83b0-4fad-b9f6-d0f3ce7c7154",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_FlowMetaData",
+ "dateTimestamp": "Tue Feb  4 14:17:02 2025",
+ "timestampMillis": "1738696622591",
+ "buildSummary": {
+  "hardwarePlatform": "",
+  "hardwareDsa": "",
+  "platformDirectory": "",
+  "runtime": "",
+  "systemConfig": "",
+  "flow": "BF_RUN",
+  "target": "TT_HLS_C_SIM",
+  "kernels": [
+   {
+    "base": {
+     "type": "KERNEL",
+     "name": "fir",
+     "file": "",
+     "reports": [],
+     "uuid": ""
+    },
+    "sources": [
+     "/ecel/UFAD/qlopezscarim/Desktop/lab3_vitis/fir1/fir.cpp",
+     "/ecel/UFAD/qlopezscarim/Desktop/lab3_vitis/fir1/fir.h"
+    ],
+    "psSources": [],
+    "cuNames": [],
+    "type": "HLS",
+    "frequency": 0,
+    "freqUnits": ""
+   }
+  ],
+  "toolVersion": "2024.2"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Tue Feb  4 14:17:02 2025",
+ "timestampMillis": "1738696622592",
+ "buildStep": {
+  "cmdId": "31a4ccdc-dd36-43b0-8904-3395f4a74595",
+  "name": "",
+  "logFile": "/ecel/UFAD/qlopezscarim/Desktop/lab3_vitis/fir1/fir1/hls/hls.log",
+  "commandLine": "",
+  "args": [],
+  "iniFiles": [],
+  "cwd": "/ecel/UFAD/qlopezscarim/Desktop/lab3_vitis/fir1"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Tue Feb  4 14:17:02 2025",
+ "timestampMillis": "1738696622593",
+ "status": {
+  "cmdId": "31a4ccdc-dd36-43b0-8904-3395f4a74595",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Tue Feb  4 14:17:07 2025",
+ "timestampMillis": "1738696627442",
+ "status": {
+  "cmdId": "31a4ccdc-dd36-43b0-8904-3395f4a74595",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Tue Feb  4 14:17:07 2025",
+ "timestampMillis": "1738696627671",
+ "status": {
+  "cmdId": "8f81b88d-83b0-4fad-b9f6-d0f3ce7c7154",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue Feb  4 14:17:07 2025",
+ "timestampMillis": "1738696627672",
+ "report": {
+  "path": "",
+  "name": "",
+  "fileType": "HTML",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue Feb  4 14:17:07 2025",
+ "timestampMillis": "1738696627672",
+ "report": {
+  "path": "",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>

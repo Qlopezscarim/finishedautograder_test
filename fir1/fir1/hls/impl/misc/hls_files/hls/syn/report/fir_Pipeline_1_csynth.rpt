@@ -1,0 +1,150 @@
+
+
+================================================================
+== Vitis HLS Report for 'fir_Pipeline_1'
+================================================================
+* Date:           Tue Feb  4 14:18:16 2025
+
+* Version:        2024.2 (Build 5238294 on Nov  8 2024)
+* Project:        fir1
+* Solution:       hls (Vitis Kernel Flow Target)
+* Product family: zynquplusRFSOC
+* Target device:  xczu48dr-ffvg1517-2-e
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+---------+----------+------------+
+    |  Clock |  Target | Estimated| Uncertainty|
+    +--------+---------+----------+------------+
+    |ap_clk  |  5.00 ns|  1.651 ns|     1.35 ns|
+    +--------+---------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+-----------+-----------+-----+-----+------------------------------------------------+
+    |  Latency (cycles) |   Latency (absolute)  |  Interval |                    Pipeline                    |
+    |   min   |   max   |    min    |    max    | min | max |                      Type                      |
+    +---------+---------+-----------+-----------+-----+-----+------------------------------------------------+
+    |       12|       12|  60.000 ns|  60.000 ns|   11|   11|  loop auto-rewind stp (delay=0 clock cycles(s))|
+    +---------+---------+-----------+-----------+-----+-----+------------------------------------------------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +----------+---------+---------+----------+-----------+-----------+------+----------+
+        |          |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        | Loop Name|   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +----------+---------+---------+----------+-----------+-----------+------+----------+
+        |- Loop 1  |       10|       10|         1|          1|          1|    10|       yes|
+        +----------+---------+---------+----------+-----------+-----------+------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+------+--------+--------+-----+
+|       Name      | BRAM_18K|  DSP |   FF   |   LUT  | URAM|
++-----------------+---------+------+--------+--------+-----+
+|DSP              |        -|     -|       -|       -|    -|
+|Expression       |        -|     -|       0|      24|    -|
+|FIFO             |        -|     -|       -|       -|    -|
+|Instance         |        -|     -|       -|       -|    -|
+|Memory           |        -|     -|       -|       -|    -|
+|Multiplexer      |        -|     -|       0|      27|    -|
+|Register         |        -|     -|       6|       -|    -|
++-----------------+---------+------+--------+--------+-----+
+|Total            |        0|     0|       6|      51|    0|
++-----------------+---------+------+--------+--------+-----+
+|Available        |     2160|  4272|  850560|  425280|   80|
++-----------------+---------+------+--------+--------+-----+
+|Utilization (%)  |        0|     0|      ~0|      ~0|    0|
++-----------------+---------+------+--------+--------+-----+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +-----------------------+----------+----+---+----+------------+------------+
+    |     Variable Name     | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +-----------------------+----------+----+---+----+------------+------------+
+    |empty_11_fu_171_p2     |         +|   0|  0|  12|           4|           1|
+    |exitcond153_fu_165_p2  |      icmp|   0|  0|  12|           4|           4|
+    +-----------------------+----------+----+---+----+------------+------------+
+    |Total                  |          |   0|  0|  24|           8|           5|
+    +-----------------------+----------+----+---+----+------------+------------+
+
+    * Multiplexer: 
+    +-------------------------+----+-----------+-----+-----------+
+    |           Name          | LUT| Input Size| Bits| Total Bits|
+    +-------------------------+----+-----------+-----+-----------+
+    |ap_done_int              |   9|          2|    1|          2|
+    |ap_sig_allocacmp_p_load  |   9|          2|    4|          8|
+    |empty_fu_54              |   9|          2|    4|          8|
+    +-------------------------+----+-----------+-----+-----------+
+    |Total                    |  27|          6|    9|         18|
+    +-------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +-------------+---+----+-----+-----------+
+    |     Name    | FF| LUT| Bits| Const Bits|
+    +-------------+---+----+-----+-----------+
+    |ap_CS_fsm    |  1|   0|    1|          0|
+    |ap_done_reg  |  1|   0|    1|          0|
+    |empty_fu_54  |  4|   0|    4|          0|
+    +-------------+---+----+-----+-----------+
+    |Total        |  6|   0|    6|          0|
+    +-------------+---+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++------------------+-----+-----+------------+----------------+--------------+
+|     RTL Ports    | Dir | Bits|  Protocol  |  Source Object |    C Type    |
++------------------+-----+-----+------------+----------------+--------------+
+|ap_clk            |   in|    1|  ap_ctrl_hs|  fir_Pipeline_1|  return value|
+|ap_rst            |   in|    1|  ap_ctrl_hs|  fir_Pipeline_1|  return value|
+|ap_start          |   in|    1|  ap_ctrl_hs|  fir_Pipeline_1|  return value|
+|ap_done           |  out|    1|  ap_ctrl_hs|  fir_Pipeline_1|  return value|
+|ap_idle           |  out|    1|  ap_ctrl_hs|  fir_Pipeline_1|  return value|
+|ap_ready          |  out|    1|  ap_ctrl_hs|  fir_Pipeline_1|  return value|
+|reg_8_out         |  out|   32|      ap_vld|       reg_8_out|       pointer|
+|reg_8_out_ap_vld  |  out|    1|      ap_vld|       reg_8_out|       pointer|
+|reg_7_out         |  out|   32|      ap_vld|       reg_7_out|       pointer|
+|reg_7_out_ap_vld  |  out|    1|      ap_vld|       reg_7_out|       pointer|
+|reg_6_out         |  out|   32|      ap_vld|       reg_6_out|       pointer|
+|reg_6_out_ap_vld  |  out|    1|      ap_vld|       reg_6_out|       pointer|
+|reg_5_out         |  out|   32|      ap_vld|       reg_5_out|       pointer|
+|reg_5_out_ap_vld  |  out|    1|      ap_vld|       reg_5_out|       pointer|
+|reg_4_out         |  out|   32|      ap_vld|       reg_4_out|       pointer|
+|reg_4_out_ap_vld  |  out|    1|      ap_vld|       reg_4_out|       pointer|
+|reg_3_out         |  out|   32|      ap_vld|       reg_3_out|       pointer|
+|reg_3_out_ap_vld  |  out|    1|      ap_vld|       reg_3_out|       pointer|
+|reg_2_out         |  out|   32|      ap_vld|       reg_2_out|       pointer|
+|reg_2_out_ap_vld  |  out|    1|      ap_vld|       reg_2_out|       pointer|
+|reg_1_out         |  out|   32|      ap_vld|       reg_1_out|       pointer|
+|reg_1_out_ap_vld  |  out|    1|      ap_vld|       reg_1_out|       pointer|
+|reg_out           |  out|   32|      ap_vld|         reg_out|       pointer|
+|reg_out_ap_vld    |  out|    1|      ap_vld|         reg_out|       pointer|
++------------------+-----+-----+------------+----------------+--------------+
+
